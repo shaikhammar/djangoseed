@@ -1,0 +1,6 @@
+[
+  {
+    "type": "sqlite",
+    "path": "c:\\dev\\djangoseed\\djangoseed\\db.sqlite3"
+  }
+]
