@@ -15,5 +15,26 @@
     <div id="content">{% block content %}{% endblock %}</div>
 
     {% block script %} {% endblock script %}
+    <script>
+      const themeSwitch = document.getElementById('toggle-switch');
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia(
+        '(prefers-color-scheme: light)'
+      ).matches;
+      const defaultTheme = prefersDark ? 'dark' : 'light';
+      const currentTheme = savedTheme || defaultTheme;
+
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      themeSwitch.checked = currentTheme === 'dark';
+
+      themeSwitch.addEventListener('change', () => {
+        const isChecked = themeSwitch.checked;
+        const newTheme = isChecked ? 'dark' : 'light';
+
+        document.documentElement.setAttribute('data-theme', newTheme);
+
+        localStorage.setItem('theme', newTheme);
+      });
+    </script>
   </body>
 </html>
