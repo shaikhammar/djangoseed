@@ -7,11 +7,11 @@
     </div>
     <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
       <div class="card-body">
-        <h1 class="text-5xl font-bold">Login</h1>
+        <h1 class="text-5xl font-bold">Signup</h1>
         <form
           class="mt-8 space-y-6"
           method="POST"
-          action="{% url 'account_login' %}"
+          action="{% url 'account_signup' %}"
         >
           {% csrf_token %} {{ form|crispy }} {% if redirect_field_value %}
           <input
@@ -24,13 +24,14 @@
             class="btn btn-neutral mt-4 w-full"
             type="submit"
           >
-            Login
+            Sign Up
           </button>
-          Doesn't have an account?
+          Already have an account?
           <a
-            href="{% url 'account_signup' %}"
+            href="{% url 'account_login' %}"
             class="btn btn-link btn-ghost"
-            >Sign Up</a
+          >
+            Login</a
           >
         </form>
       </div>
