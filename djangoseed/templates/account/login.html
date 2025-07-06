@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% load crispy_forms_tags %} {% load tailwind_filters
-%} {% block title %} "Sign In" {% endblock title %} {% block content %}
+%} {% block title %} Sign In {% endblock title %} {% block content %}
 <div class="hero bg-base-200 min-h-screen">
   <div class="hero-content flex-col lg:flex-row-reverse">
     <div class="text-center lg:text-left">
@@ -26,10 +26,10 @@
           >
             Login
           </button>
-          Doesn't have an account?
+          Dont have an account yet?
           <a
             href="{% url 'account_signup' %}"
-            class="btn btn-link btn-ghost"
+            class="btn btn-link btn-sm"
             >Sign Up</a
           >
         </form>

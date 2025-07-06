@@ -162,3 +162,6 @@ ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
 ACCOUNT_LOGIN_METHODS = {'email'}
 
 ACCOUNT_SESSION_REMEMBER = True
+
+LOGIN_REDIRECT_URL = "/home"
+# LOGOUT_REDIRECT_URL = 'home'

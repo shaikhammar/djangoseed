@@ -15,6 +15,31 @@
     <div id="content">{% block content %}{% endblock %}</div>
 
     {% block script %} {% endblock script %}
+    <dialog
+      id="logout_modal"
+      class="modal"
+    >
+      <div class="modal-box">
+        <h1 class="text-2xl">Logout</h1>
+        <p>Are you sure you want to logout?</p>
+        <div>
+
+            <form
+            method="POST"
+                action="{% url 'account_logout' %}"
+                >
+                {% csrf_token %} 
+                <button
+                class="btn btn-neutral"
+                type="submit"
+                >
+                Logout
+            </button>
+        </div>
+    </form>
+    <a class="btn btn-ghost" href="{% url 'account_email' %}">Deny</a>
+</div>
+    </dialog>
     <script>
       const themeSwitch = document.getElementById('toggle-switch');
       const savedTheme = localStorage.getItem('theme');
